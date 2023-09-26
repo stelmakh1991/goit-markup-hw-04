@@ -66,16 +66,34 @@ img {
 }
 /* NAVIGATION MENU */
 .navigation {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
     color: #2E2F42;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation:hover, 
 .navigation:focus {
     color: #404bbf;
+}
+.navigation::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    opacity: 0%;
+    border-radius: 2px;
+    background-color: #404BBF;
+}
+.navigation:active::after, 
+.navigation:visited::after {
+    opacity: 100%;
 }
 /* ADDRESS */
 .address {
@@ -90,6 +108,7 @@ img {
     color: #434455;
     padding-top: 24;
     padding-bottom: 24;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address .address-item:hover,
 .address .address-item:focus {
@@ -99,7 +118,11 @@ img {
 .section-first {
     background-color: #2E2F42;
     padding: 188px 0 188px 0;
-}
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/image10.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}   
 .section-first .header {
     color: #FFF;
     text-align: center;
@@ -129,6 +152,7 @@ img {
     padding: 16px 32px;
     background-color: #4d5ae5;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-first .order-service:hover,
 .section-first .order-service:focus {
@@ -137,6 +161,15 @@ img {
 /* SECTION 2 */
 body .section-second {
     padding: 120px 0 120px 0;
+}
+.icon-box {
+    display: block;
+    width: 100%;
+    padding: 24px 100px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--LIGHT-SLATE, #8E8F99);
+    background: var(--CLOUD, #F4F4FD);
 }
 /* SECTION 3 */
 body .section-third {
@@ -158,10 +191,40 @@ body .section-fourth{
 }
 .section-fourth .header-second {
 }
+.image {
+    position: relative;
+    overflow: hidden;
+}
+.image > .label {
+    color: var(--CLOUD, #F4F4FD);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    background: var(--IRIS, #4D5AE5);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.image:hover .label{
+    transform: translateY(0);
+}
+
 /* FOOTER */
 body .footer {
     background-color: #2E2F42;
     padding: 100px 0 100px;
+}
+.footer-list {
+    gap: 120px;
 }
 .footer .logo-footer {
     color: #f4f4fd;
@@ -177,6 +240,14 @@ body .footer {
     line-height: 1.5;
     letter-spacing: 0.32px;
     max-width: 264px;
+}
+.footer .social-media {
+    color: #FFF;
+}
+.sm-icons {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 16px;
 }
                 /* LAYOUT */
 .body {
@@ -205,7 +276,7 @@ max-width: 100vw;
 }
 .navigation {
     padding-top: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 0;
 }
 .address-con {
     display: flex;
@@ -244,7 +315,9 @@ max-width: 100vw;
     align-items: center;
     border-radius: 0px 0px 4px 4px;
     background: var(--WHITE, #FFF);
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .member-name {
     text-align: center;
@@ -265,6 +338,11 @@ max-width: 100vw;
     padding-bottom: 0px;
     flex-shrink: 0;
     background: var(--WHITE, #FFF);
+}
+.portfolio-card:hover {
+    box-shadow: 3px 5px 3px 0px rgba(46, 47, 66, 0.08),
+    0px 2px 2px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 8px 0px rgba(46, 47, 66, 0.08);
 }
 .portfolio-text {
     padding: 32px 16px;
