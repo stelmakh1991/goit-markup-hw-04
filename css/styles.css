@@ -363,17 +363,23 @@ max-width: 100vw;
     margin-bottom: 16px;
 }
         /* SVG */
-.sm-icons .sm-icon {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    margin: 0;
-    padding: 12px;
-    width: 40px;
-    height: 40px;
-    overflow: visible;
-    background: #8E8F99;
+.social-media {
+    margin-bottom: 16px;
 }
-.instagram {
+.sm-icons {
+    gap: 16px;
+}
+.ellipse {
+    position: relative;
+    overflow: visible;
+    fill: #4D5AE5;
+}
+.instagram, 
+.twitter, 
+.facebook, 
+.linkedinn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
     fill: white;
 }
